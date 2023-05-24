@@ -47,14 +47,13 @@ mongoose.connect(process.env.MONGO_URI,
 )
 .then(res => {
   if(res)
-    console.log(res, 'mongodb connection successful!');
+    console.log('mongodb connection successful!');
+    app.listen(port, () => {
+      console.log(`server is running on port ${port}`);
+    });
 })
 .catch(error => {
   console.log(error);
-});
-
-app.listen(port, () => {
-  console.log(`server is running on port ${port}`);
 });
 
 module.exports = app;
