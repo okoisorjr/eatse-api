@@ -44,24 +44,6 @@ exports.bookings = async (req, res, next) => {
       }
     }
   }
-
-  //if(rooms > 1 && duration >= 1){
-    /* const checkUser = await db.query(`SELECT * FROM accounts WHERE user_id=${user_id}`);
-    let id = uuidv4();
-    if(checkUser.rowCount == 0){
-      res.status(404).send({msg: 'user does not exist!'});
-    }else{
-      const new_booking = db.query(`INSERT INTO bookings 
-                                    (id, services, extras, rooms, duration, weekly, days, price, paid, onetime, user_id) 
-                                    VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`, 
-                                    [id, req.body.services, req.body.extras, rooms, duration, weekly, days, price, paid, onetime, user_id],
-                                  );
-      if(new_booking){
-        res.status(201).send({id: `${id}`});
-        console.log(new_booking);
-      }
-    } */
-  //}
 }
 
 exports.list_bookings = async (req, res, next) => {

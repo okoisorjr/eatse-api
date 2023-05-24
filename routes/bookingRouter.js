@@ -3,5 +3,7 @@ const bookingController = require('../controllers/bookingController');
 const authorize = require('../middlewares/verifyToken');
 
 router.post('/book', authorize.verifyToken, bookingController.bookings);
-router.post('/allbooks', authorize.verifyToken, bookingController.list_bookings);
+router.get('/allbooks', authorize.verifyToken, bookingController.list_bookings);
+/* router.get('all-bookings', authorize.verifyToken, bookingController.list_bookings); */
+
 module.exports = router;
